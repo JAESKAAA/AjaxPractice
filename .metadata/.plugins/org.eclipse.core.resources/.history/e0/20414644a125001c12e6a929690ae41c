@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-3.6.0.min.js"></script>
+<title>Ajax 사용 - 단축 메소드</title>
+</head>
+<body>
+	<button type="button" onclick="reqList();">get 조회-1</button>
+	<button type="button" onclick="reqList2();">get 조회-2</button>
+	<button type="button" onclick="reqList3();">post 요청-1</button>
+	<button type="button" onclick="delList();">삭제</button>
+	<p id="resp"></p>
+	<script>
+		function reqList(){
+			$.get("/contact/list.do", function(data){
+				$("#resp").html(data);
+			});
+		}
+		function delList(){
+			//p요소 초기화
+			$("#resp").html("");
+		}
+	</script>
+</body>
+</html>

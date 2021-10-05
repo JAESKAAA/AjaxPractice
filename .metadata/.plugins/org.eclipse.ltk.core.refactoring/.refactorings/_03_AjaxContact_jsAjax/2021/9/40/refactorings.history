@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;01.get_XHR.html&apos; to &apos;01.get_XHR.html&apos;&#x0D;&#x0A;- Original project: &apos;_03_AjaxContact_jsAjax&apos;&#x0D;&#x0A;- Destination element: &apos;01.get_XHR.html&apos;&#x0D;&#x0A;- Original element: &apos;01.get_XHR.html&apos;" description="Copy file" element1="WebContent/01.get_XHR.html" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1632884809233" target="/_03_AjaxContact_jsAjax/WebContent/01.get_XHR.html" units="0" version="1.0"/>
+</session>
