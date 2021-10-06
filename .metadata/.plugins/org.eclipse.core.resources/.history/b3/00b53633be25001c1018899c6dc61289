@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-3.6.0.min.js"></script>
+<title>Ajax 사용 - POST방식</title>
+</head>
+<body>
+	<button type="button" onclick="reqList();">등록</button>
+	<button type="button" onclick="delList();">삭제</button>
+	<p id="resp"></p>
+	<script>
+		function reqList(){
+			$.ajax({
+				url : "/contact/list.do",
+				type : "POST",
+				data : {no : 65, name : "홍금보", tel : "010-1111-1122", address : "동해시"}
+			});
+		}
+		function delList(){
+			//p요소 초기화
+			$("#resp").html("");
+		}
+	</script>
+</body>
+</html>

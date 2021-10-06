@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>XHR 객체 집접 사용 - GET 방식</title>
+</head>
+<body>
+	<button type="button" onclick="reqList();">조회</button>
+	<button type="button" onclick="delList();">삭제</button>
+	<p id="resp"></p>
+	<script>
+		function reqList(){
+			var xhr = new XMLHttpRequest();
+			
+			xhr.onreadystatechange = function(){
+				if(xhr.readyState == 4){
+					console.log(xhr.readyState);
+					if(xhr.status == 200){
+						console.log(xhr.status);
+						console.log(data);
+						var data = xhr.responseText;
+						document.querySelector("#resp").innerText=data;
+					}
+				}
+			};
+		xhr.open("GET", "/contact/list.do", true);
+		xhr.send();
+		}
+		
+		function delList(){
+			document.getElementById("resp").innerHTML = "";
+		}
+	</script>
+</body>
+</html>

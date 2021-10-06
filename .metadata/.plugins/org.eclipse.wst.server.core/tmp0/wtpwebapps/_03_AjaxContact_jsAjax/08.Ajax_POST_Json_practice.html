@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="js/jquery-3.6.0.min.js"></script>
+<title>Ajax 사용 - JSON 형식</title>
+</head>
+<body>
+	<button type="button" onclick="reqList();">등록</button>
+	<button type="button" onclick="delList();">삭제</button>
+	<p id="resp"></p>
+	<script>
+		function reqList(){
+			var send_data = {
+				contacts : [
+				{no : 64, name : "김개똥", tel : "010-1111-1111", address : "김개똥네집"},
+				{no : 63, name : "김계란", tel : "010-1111-1112", address : "김개똥네집"},
+				{no : 62, name : "홍개똥", tel : "010-1111-1113", address : "김개똥네집"},
+				{no : 61, name : "홍계린", tel : "010-1111-1114", address : "김개똥네집"}
+			]};
+			
+			//ajax를 호출	
+			$.ajax({
+				url : "/contact/update_batch.do",
+				type : "POST",
+				//json 타입보낼때는 콘텐츠타입을 json 지정해주기
+				contentType : "application/json",
+				//json형태로 데이터 전송되기 떄문에, json을 문자열로 바꿔줘야함
+				data : JSON.stringify(send_data),
+				success : function(data){
+					console.log(data);
+					$("#resp").html(data);
+				}
+			});
+		}
+		function delList(){
+			//p요소 초기화
+			$("#resp").html("");
+		}
+	</script>
+</body>
+</html>
